@@ -26,8 +26,8 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker build -t demo-nextjs .
-          docker tag demo-nextjs:latest ${{ secrets.AWS_ACCESS_REGION }}
-          docker push ${{ secrets.AWS_ACCESS_REGION }}
+          docker tag demo-nextjs:latest ${{ secrets.AWS_ACCESS_ECR }}
+          docker push ${{ secrets.AWS_ACCESS_ECR }}
 
       - name: Deploy to ECS
         run: |
